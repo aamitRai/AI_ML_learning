@@ -1,0 +1,153 @@
+
+Pytorch : Open Source Deep learning library
+	* combie torch + python =>pytorch
+	* torch : scientific computing framework 
+				but it have two issue 
+				a/Not in python it is in lua language
+				b/Static Graph
+		    so in 2017 meta release the Pytourch to solve these two problem.
+			
+			
+	* ONXX : 
+			ONNX (Open Neural Network Exchange) is an open-source format to represent machine learning models.
+			It's designed to make models portable between different frameworks like PyTorch, TensorFlow, scikit-learn, and more
+	
+	
+	
+	* Tensor: 
+			Tensor is a specialized multi-dimensional array designed for mathematical and computational efficiency.
+		* Dimension : means that particular array spain in how many direction
+		
+		Real-World Examples
+		1/Scalars: 0-dimensional tensors (a single number)
+			Represents a single value, often used for simple metrics or constants.
+			Example:
+			Loss value: After a forward pass, the loss function computes a single scalar value indicating the difference between the predicted and actual outputs.
+			Example: 5.0 or -3.14
+		2/Vectors: 1-dimensional tensors (a list of numbers)
+			Represents a sequence or a collection of values.
+			Example:
+			Feature vector: In natural language processing, each word in a sentence may be represented as a 1D vector using embeddings.
+			Example: [0.12, -0.84, 0.33] (a word embedding vector from a pre-trained model like Word2Vec or Glove)
+		3/Matrices: 2-dimensional tensors (a 2D grid of numbers)
+			Example : grey Image
+			
+		4/3D Tensors: Coloured images (RGB)
+			Adds a third dimension, often used for stacking data.
+			Example:
+			RGB Images: A single RGB image is represented as a 3D tensor (width × height × channels).
+			Examples:
+			RGB Image (e.g., 256x256): Shape [256, 256, 3]
+
+		5/4D Tensors: Batches of RGB images
+			Adds the batch size as an additional dimension to 3D data.
+			Example:
+			Batches of RGB Images: A dataset of coloured images is represented as a 4D tensor (batch size × width × height × channels).
+			Example: A batch of 32 images, each of size 128x128 with 3 colour channels (RGB), would have shape [32, 128, 128, 3].
+
+		6/5D Tensors: Video data
+			Adds a time dimension for data that changes over time (e.g., video frames).
+			Example:
+			Video Clips: Represented as a sequence of frames, where each frame is an RGB image.
+			Example: A batch of 10 video clips, each with 16 frames of size 64x64 and 3 channels (RGB), would have shape [10, 16, 64, 64, 3].
+			
+		
+
+		*Why Are Tensors Useful?
+				1/Mathematical Operations
+					Tensor enable efficient mathematical computations (addition, multiplication, dot product, etc.) necessary for neural network operations.
+				2/Representation of Real-world Data
+					Data like images, audio, videos, and text can be represented as tensors:
+					Images: Represented as 3D tensors (width × height × channels).
+					Text: Tokenized and represented as 2D or 3D tensors (sequence length × embedding size).
+				3/Efficient Computations
+					Tensors are optimized for hardware acceleration, allowing computations on GPUs or TPUs, which are crucial for training deep learning models.
+				Where Are Tensors Used in Deep Learning?
+					1/Data Storage
+						Training data (images, text, etc.) is stored in tensors.
+					2/Weights and Biases
+						The learnable parameters of a neural network (weights, biases) are stored as tensors.
+						
+						
+		* Training of Neural Network:
+				Neural network itself a nested function, calculating their deviation manually is impossible 
+				to Solve this problem we have Autograd.
+		* Autograd:
+			Autograd is a core component of PyTorch that provides automatic differentiation for tensor
+			operations. It enables gradient computation, which is essential for training machine learning
+			models using optimization algorithms like gradient descent.
+			
+		* requires_grad=True : by this operation pytorch understand in future we require the deravative of this
+							   so it will track it and when ever require it give the deravative instantly.
+							   
+							   
+		* Types of Node:
+			1/leaf node : starting node
+			2/ Intermediate node: middle node
+			3/ root node: end node 
+			
+		* Clearing the Gradient :
+			x.grad.zero_() : by this we clear the gradint of last pass
+			
+		* Disable Gradient Tracking
+			x=torch.tensor(2.0,requires_grad=True)
+				we have three ways:
+					a/ x.requires_grad(False)
+					b/ z=x.detach()
+					c/ with torch.no_grad():
+							y=x**2
+							
+					
+					
+			
+		* convert numpy to tensors 
+			X_train_tensor = torch.from_numpy(X_train)
+		
+		
+		* epochs : how many run you want to take on your data
+				An epoch is one complete pass through the entire training dataset by the machine learning model.
+				
+		* learning_rate : 
+			The learning rate controls how much the model updates itself after each step.
+		
+						
+		# Steps to Create and Train a Model:
+		1/ Create the Model
+		2/ Forward Pass
+		3/ Calculate Loss
+		4/ Backward Pass (Backpropagation)
+		5/ Update Parameters
+		 Repeat steps 2–5 for multiple epochs.
+		
+		
+		
+		---------------------------------
+		# torch.nn module:
+		
+				The torch.nn module in PyTorch is a core library that provides a wide array of classes and 
+		functions designed to help developers build neural networks efficiently and effectively. It 
+		abstracts the complexity of creating and training neural networks by offering pre-built layers, 
+		loss functions, activation functions, and other utilities, enabling you to focus on designing and 
+		experimenting with model architectures.
+		Key Components of torch.nn:
+		1. Modules (Layers):
+		nn.Module: The base class for all neural network modules. Your custom models and 
+		layers should subclass this class.
+		○
+		Common Layers: Includes layers like nn.Linear (fully connected layer), nn.Conv2d
+		(convolutional layer), nn.LSTM (recurrent layer), and many others.
+		○
+		2. Activation Functions:
+		Functions like nn.ReLU, nn.Sigmoid, and nn.Tanh introduce non-linearities to the 
+		model, allowing it to learn complex patterns.
+		○
+		3. Loss Functions:
+		Provides loss functions such as nn.CrossEntropyLoss, nn.MSELoss, and nn.NLLLoss to 
+		quantify the difference between the model's predictions and the actual targets.
+		○
+		4. Container Modules:
+		○ nn.Sequential: A sequential container to stack layers in order.
+		5. Regularization and Dropout:
+		Layers like nn.Dropout and nn.BatchNorm2d help prevent overfitting and improve 
+		the model's ability to generalize to new data.
+		

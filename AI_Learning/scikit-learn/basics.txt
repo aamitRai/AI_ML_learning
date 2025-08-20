@@ -1,0 +1,43 @@
+
+Scikit-learn :
+				Scikit-learn is an open source machine learning library that supports supervised and unsupervised learning.
+				It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and 
+				many other utilities.
+				
+				
+	1. scaler = StandardScaler()
+		You're creating a tool (called scaler) to standardize your data.
+		Standardize means:
+		➤ Make all features (columns) have mean = 0 and standard deviation = 1.
+		➤ In other words, make the numbers in each column centered and not too big or small.
+		
+	2. X_train = scaler.fit_transform(X_train)
+		You tell the scaler: “Look at my training data (X_train) and learn how to scale it.”
+		Then it changes all the values in X_train to make them centered around 0.
+		
+	3. X_test = scaler.transform(X_test)
+		Now use the same rules (from training data) to change the X_test values.
+		You do not "fit" again on test data — only "transform" using the earlier fit.
+		
+		
+	# What is train_test_split?
+		It is a function inside sklearn.model_selection module used to:
+		Split your dataset into training and testing parts.
+		
+		
+		X_train, X_test, y_train, y_test = train_test_split(df.iloc[:, 1:], df.iloc[:, 0], test_size=0.2)
+		1. df.iloc[:, 1:]
+			Selects all rows, and columns starting from index 1 to the end.
+			This is your input features (X) — the data you’ll use to make predictions.
+		2. df.iloc[:, 0]
+			Selects all rows, and only the first column (index 0).
+			This is your target/output (y) — the label you want to predict.
+		3. test_size=0.2
+		20% of the data will go to the test set, and the remaining 80% to the train set.
+		
+	 #What is LabelEncoder?
+		Comes from sklearn.preprocessing
+		Used to convert text labels (like 'yes', 'no', 'cat', 'dog') into numbers (like 0, 1, 2, ...).
+		This is needed because most ML algorithms only work with numbers, not text.
+		
+	

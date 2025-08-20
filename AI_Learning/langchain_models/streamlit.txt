@@ -1,0 +1,4 @@
+cmd to run the streamlit
+
+streamlit run prompt_au.py
+

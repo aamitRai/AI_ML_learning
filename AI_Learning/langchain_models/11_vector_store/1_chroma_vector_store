@@ -1,0 +1,54 @@
+from dotenv import load_dotenv
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
+from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_chroma import Chroma
+from langchain.schema import Document
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Set the YouTube video ID (only the ID, not the full URL)
+video_id = "MG-Ac4TAvTY"
+
+try:
+    # Fetch the transcript in English (or closest available)
+    transcript_list = YouTubeTranscriptApi.get_transcript(video_id, languages=["en"])
+
+    # Convert transcript chunks into a single plain text string
+    transcript = " ".join(chunk["text"] for chunk in transcript_list)
+
+    # Split the transcript into manageable chunks
+    splitter = RecursiveCharacterTextSplitter.from_language(
+        language=Language.PYTHON,
+        chunk_size=200,
+        chunk_overlap=2
+    )
+    chunks = splitter.create_documents([transcript])
+
+    # Initialize the embedding model
+    embedding = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+
+    # Print the split chunks (for debugging or confirmation)
+    print(chunks)
+
+    # Initialize the vector store
+    vector_store = Chroma(
+        persist_directory="chroma_db",
+        collection_name="ipl_players",
+        embedding_function=embedding,
+    )
+
+    # Add the document chunks to the vector store
+    # vector_store.add_documents(chunks)
+    docs = vector_store.as_retriever().get_relevant_documents("")
+
+    for i, doc in enumerate(docs, 1):
+        print(f"\nDocumentss {i}:")
+        print(doc.page_content)
+
+except TranscriptsDisabled:
+    print("Transcripts are disabled for this video.")
+except NoTranscriptFound:
+    print("No transcript found in the specified language.")
