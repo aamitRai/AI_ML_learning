@@ -1,0 +1,10 @@
+1. Data Collection
+2. Insufficient Data/Labelled Data
+3. Non Representative Data : dont havefull data 
+4. Poor Quality Data
+5. Irrelevant Features  (note: garbage in garbage out)
+6. Overfitting: the model just memorizing the things not learn.
+7. Underfitting: the model dont learn
+8. Software Integration : make sure what ever you are building we can Integrate to the aplication.
+9. offline learning
+10. Deployment

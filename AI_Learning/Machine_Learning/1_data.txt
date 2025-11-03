@@ -1,0 +1,9 @@
+# Data
+    Data of two types 
+
+    1/Numerical Data:
+        Age,cgpa,Iq, marks,population,money
+
+    2/Categorical Data 
+        gender, nationality, brands
+

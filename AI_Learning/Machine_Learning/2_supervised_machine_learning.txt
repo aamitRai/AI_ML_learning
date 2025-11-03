@@ -1,0 +1,22 @@
+
+#Supervised	 :
+		* If we have both the input and utput column than it is supervised.
+		*In supervised learning the data is labelled .
+		*In supervised learing we are learning from past examples to predict the future value.
+		* Model:
+			Input data: x
+			  |	
+	-->		Model 
+			  |
+   ModelUpdate  	Predict output (Y)     -->compare---->  (Training dataset) Expected output (y)
+
+		<--	Error
+
+
+#Types :
+	1/Regression: 
+			If the output column is Numerical than we can say it Regression.
+			example: Expected package, Stock price
+	2/Classification: 
+			If the output column is Categorical than we can say it Classification.
+			example :email spam prediction, finding dogs or cat

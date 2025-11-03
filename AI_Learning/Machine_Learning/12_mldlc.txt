@@ -1,0 +1,11 @@
+Machine learning Development Life Cycle:
+
+1/Framing the problem : here you decide what is the problem, what we solve, go with online or oflline learning, who are our customer
+2/Data Gathering: for your models
+3/Data PreProcessing : format the data, like missing ,unstucture, duplicate,missing value, outliers, unscale value.
+4/EDA : Exploreancy data analysis
+5/Features Engineering Selection : find the suitable input , create new feature,or add intellegence to existing feature, remove unuseful feature.
+6/Model Training Evaluation and Selection.
+7/Model Deployment: so that users can use.
+8/Testing
+9/Optimize: retrain.

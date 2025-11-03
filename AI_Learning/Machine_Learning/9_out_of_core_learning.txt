@@ -1,0 +1,5 @@
+Out-of-Core Learning
+
+Definition:
+Out-of-core learning is a machine learning technique used when the dataset is too large to fit into memory (RAM) at once.
+👉 Instead of loading all data, the model processes the data in small batches (chunks) from disk.

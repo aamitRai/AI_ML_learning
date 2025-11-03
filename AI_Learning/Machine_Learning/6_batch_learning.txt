@@ -1,0 +1,49 @@
+#ML in production
+* In production Ml has two types 
+1/Batch Learning  || Offline Learning
+2/  Online Learning
+
+
+
+# Batch Learning  || Offline Learning: 
+  Is a type of machine learning where the model is trained on the entire dataset at once rather than incrementally. 
+  It’s the traditional approach used in most classical ML algorithms.
+
+
+#Key Characteristics
+
+        *Full Dataset Required:
+          The algorithm sees all the data before training starts.
+
+        *Offline Learning:
+          The model is trained offline, not updated in real-time.
+
+        *High Computational Cost:
+           Can require a lot of memory and processing power for very large datasets.
+
+        *Stable Model:
+           Once trained, the model doesn’t change until retrained with new data.
+
+#Use Cases
+
+    Traditional ML algorithms like Linear Regression, SVM, Decision Trees
+
+    Image classification on a fixed dataset
+
+    Text classification with a fixed corpus
+
+    Financial modeling where historical data is analyzed
+
+#Pros
+
+    High accuracy if the dataset is clean and complete.
+
+    Easier to implement and understand.
+
+#Cons
+
+    Not suitable for streaming or real-time data.
+
+    Memory-intensive for very large datasets.
+
+    Cannot adapt dynamically to new data without retraining.

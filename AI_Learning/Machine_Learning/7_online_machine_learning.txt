@@ -1,0 +1,25 @@
+#Online Learning: On the server you are training the model.
+    you train your model sequentially in small smal batch
+    exapmle: chatbot, youtube
+
+
+# Definition:
+A machine learning approach where the model is trained incrementally, one data point (or a small batch) at a time, as the data arrives. The model updates continuously without needing the entire dataset upfront.
+
+# Key Characteristics
+
+    Incremental Updates: The model learns as new data comes in.
+
+    Real-Time Training: Can adapt to changing data patterns immediately.
+
+    Low Memory Requirement: Only a small portion of data is needed at a time.
+
+    Dynamic Model: The model evolves continuously instead of being static.
+
+#Example
+
+    Chatbot: As users interact, the chatbot updates its responses based on new conversations.
+
+    Recommendation systems: Netflix, Amazon, YouTube – update recommendations as users watch/buy content.
+
+    Stock price prediction: Continuously adjusts to new market data.

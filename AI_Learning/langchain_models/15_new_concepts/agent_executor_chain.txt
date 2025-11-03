@@ -1,0 +1,63 @@
+# my question is why in the agent executor we again pass the tool
+from langchain.agents import create_tool_calling_agent
+from langchain.agents import AgentExecutor
+
+
+
+agent = create_tool_calling_agent(model, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools)
+
+# Agent = Chef with a menu (knows what dishes exist)
+# AgentExecutor = Kitchen (has actual ingredients and cooks the food)
+
+
+User: "What's my application status?"
+
+┌─────────────────────────────────────────┐
+│  AgentExecutor (Orchestrator)          │
+└─────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────┐
+│  Agent (Decision Maker)                 │
+│  - Sees tools list                      │
+│  - Decides: "Call get_user_incomplete_  │
+│    applications"                        │
+└─────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────┐
+│  AgentExecutor (Executor)               │
+│  - Looks up tool in tools list          │
+│  - EXECUTES: get_user_incomplete_       │
+│    applications("18762213802")          │
+│  - Returns result to Agent              │
+└─────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────┐
+│  Agent (Decision Maker)                 │
+│  - Receives tool result                 │
+│  - Decides: "I have enough info"        │
+│  - Generates final answer               │
+└─────────────────────────────────────────┘
+
+
+
+
+
+
+
+
+
+
+ Quick Comparison Table
+    Aspect	            Multiple Prompt         Single Prompt (Tools)
+    Scalability         Poor	                Excellent
+    LLM Calls           2+ calls	            1 call (usually)
+    Intelligence        Limited	                High
+    Predictability      High	                Lower
+    Debugging       	Easy	                Harder
+    Complexity      	Simple	                Complex
+    Maintenance     	High effort	            Low effort
+    Cost Control        Predictable	            Variable

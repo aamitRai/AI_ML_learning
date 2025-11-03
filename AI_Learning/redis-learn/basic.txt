@@ -1,0 +1,12 @@
+
+#Redis queues
+
+    Redis queues are commonly used for:
+
+        Background jobs (email sending, image processing, etc.)
+        Rate limiting / throttling
+        Task distribution across workers
+
+    *Working
+        Step 1: How Queues Work in Redis
+        Redis provides Lists (LPUSH, RPUSH, LPOP, RPOP) → we can use them as a queue.

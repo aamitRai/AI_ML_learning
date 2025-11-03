@@ -1,0 +1,47 @@
+Based on Learning Model, ML is classified into two types:
+
+1. Memorizing / Instance-Based Learning
+
+How it works:
+
+    No real "training" or abstract model building.
+
+    The algorithm remembers the data and answers based on similarity to stored examples.
+
+    Behavior: Instant reply when asked, by comparing new data with past data.
+
+Example Algorithm:
+
+    k-Nearest Neighbors (kNN)
+
+    Locally Weighted Regression
+
+    Key Point: Relies on memory + similarity search.
+
+2. Generalizing / Model-Based Learning
+
+How it works:
+
+    The algorithm actually learns patterns/relationships in the data by creating a model (like a function or set of rules).
+
+    Once trained, the model can generalize and make predictions on new/unseen data.
+
+    Behavior: Learns from the training phase, then predicts using the learned model.
+
+Example Algorithms:
+
+    Linear Regression
+
+    Logistic Regression
+
+    Decision Trees
+
+    Neural Networks
+
+Key Point: Builds a general model → better at handling unseen data.
+
+    ✅ Analogy to remember:
+
+    Instance-based: Like a student who just memorizes past question papers and matches answers.
+
+    Model-based: Like a student who understands the subject and can solve any new question.

@@ -1,0 +1,109 @@
+#Unsupervised :
+		*Here you only have the input data
+        *In unsupervised learning the data is not labelled.
+		*Here all about the raw data. 
+
+			Input data: x
+			  |	
+			Model
+			  |	
+			Generated
+			  |	
+			example
+
+#Types :
+    1/Clusturing
+    2/Association
+    3/Dimensionality Reduction
+    4/Anomaly Detection
+
+
+
+
+1. Clustering
+
+Goal: Group similar data points together based on features.
+Output: Clusters or groups.
+
+Algorithms:
+
+    K-Means
+
+    Hierarchical Clustering
+
+    DBSCAN
+
+    Gaussian Mixture Models (GMM)
+
+Use cases:
+
+    Customer segmentation
+
+    Market basket analysis
+
+    Image segmentation
+
+
+2/Association
+
+Goal: Find rules or relationships between variables in datasets.
+
+Output: Association rules (e.g., “if A occurs, B likely occurs”)
+
+Algorithms:
+
+    Apriori
+
+    Eclat
+
+    FP-Growth
+
+    Use cases:
+
+    Market basket analysis (Amazon “customers who bought this also bought…”)
+
+    Recommendation systems
+
+3. Dimensionality Reduction
+
+Goal: Reduce the number of features while preserving essential information.
+
+Output: Lower-dimensional representation of the data.
+
+Algorithms:
+
+    Principal Component Analysis (PCA)
+
+    t-SNE (t-distributed Stochastic Neighbor Embedding)
+
+    Autoencoders
+
+    Singular Value Decomposition (SVD)
+
+Use cases:
+
+    Data visualization
+
+    Noise reduction
+
+    Feature extraction for machine learning
+
+4. Anomaly Detection (Outlier Detection)
+
+Goal: Identify unusual or rare data points.
+
+Algorithms:
+
+    Isolation Forest
+
+    One-Class SVM
+
+    DBSCAN (can also detect outliers)
+
+Use cases:
+
+    Fraud detection
+
+    Network intrusion detection
+
+    Fault detection in manufacturing

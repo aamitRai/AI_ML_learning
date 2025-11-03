@@ -1,0 +1,28 @@
+Imagine this 👇
+
+You are walking down a hill (hill = loss function).
+Your goal: reach the bottom of the hill (best solution).
+Learning Rate = Step Size (how big your steps are).
+
+
+#3 Cases
+
+    a/Too Big Steps (High Learning Rate):
+
+        You take huge jumps.
+
+        You might overshoot the bottom and bounce back and forth.
+
+        Sometimes you may never settle at the bottom.
+
+    b/Too Small Steps (Low Learning Rate):
+
+        You take baby steps.
+
+        You will reach the bottom, but it will take a very long time.
+
+    c/Just Right (Optimal Learning Rate):
+
+        You take medium steps.
+
+        You reach the bottom quickly and smoothly.

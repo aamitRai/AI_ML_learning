@@ -1,0 +1,36 @@
+# Semi-supervised learning :
+    is a hybrid approach between supervised and unsupervised learning. It uses a small amount of labeled data along 
+    with a large amount of unlabeled data to improve learning accuracy.
+    It’s particularly useful when labeling data is expensive or time-consuming, but unlabeled data is abundant.
+
+    ex: google photos => it ask for one photo than for that person it automatically lablled the rest photos of that person.
+
+#Key Characteristics
+
+    *Part of the dataset has labels, but most data is unlabeled.
+
+    *Learns patterns from unlabeled data and uses labeled data to guide the learning.
+
+    *Helps improve model performance compared to using only labeled data.
+
+#How it Works
+
+    *Train a model on the small labeled dataset.
+
+    *Use the model to predict labels for unlabeled data (pseudo-labeling).
+
+    *Retrain the model on the combination of labeled and pseudo-labeled data.
+
+    *Iterate to improve accuracy.
+
+#Common Algorithms / Techniques
+
+    * Self-training (pseudo-labeling)
+
+    * Graph-based methods
+
+    * Semi-supervised SVM (S3VM)
+
+    * Ladder networks (used in deep learning)
+
+    * Generative models (like semi-supervised GANs)
